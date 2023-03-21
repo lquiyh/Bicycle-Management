@@ -1,0 +1,12 @@
+package com.example.springboot.controller.request;
+
+import lombok.Data;
+
+@Data
+public class BicyclePageRequest extends BaseRequest {
+
+    private String brand;
+
+    private String model;
+
+}

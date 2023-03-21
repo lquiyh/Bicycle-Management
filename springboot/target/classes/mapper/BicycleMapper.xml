@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.example.springboot.mapper.BicycleMapper">
+    <select id="listCondition" resultType="com.example.springboot.model.entity.Bicycle">
+        select * from bicycle
+        <where>
+            <if test="brand != null and brand != ''">
+                brand like concat('%', #{ brand }, '%')
+            </if>
+            <if test="model != null and model != ''">
+                and model = #{model}
+            </if>
+        </where>
+
+        order by id desc
+    </select>
+
+</mapper>
