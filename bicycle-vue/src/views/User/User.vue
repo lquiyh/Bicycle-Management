@@ -2,37 +2,38 @@
     <div class="common-layout" sytu>
         <el-container>
             <el-header height="200px">
-
-                <el-menu :default-active="activeIndex" class="el-menu-demo" mode="horizontal" :ellipsis="false"
-                    @select="handleSelect">
-                    <div style="width: 100px; padding-left: 30px">
-                        <img src='@/assets/logo.svg' alt="" style="width: 60px; display: inline">
-                    </div>
-                    <div style="flex: 1; color: #4447ea; font-size: 30px;margin: 10px; margin-left: 25px;">
-                        <b>Bicycle-Management</b>
-                    </div>
-
-                    <div class="flex-grow" />
-                    <el-dropdown>
-                        <div class="el-dropdown-link" style="line-height: 60px">
-                            <span style="font-size: 14px; margin-left: 45px">{{ currentUser.username }}</span>
-                            <el-icon class="el-icon&#45;&#45;right">
-                                <arrow-down />
-                            </el-icon>
+                <div>
+                    <el-menu :default-active="activeIndex" class="el-menu-demo" mode="horizontal" :ellipsis="false"
+                        @select="handleSelect" style="background-color: #ffffff; background-image: linear-gradient(90deg, #ffffff 30%, #4447ea 100%);
+                                ">
+                        <div style="width: 100px; padding-left: 30px">
+                            <img src='@/assets/logo.svg' alt="" style="width: 60px; display: inline">
                         </div>
-                        <template #dropdown>
-                            <el-dropdown-menu>
-                                <el-dropdown-item>
-                                    <div>修改信息</div>
-                                </el-dropdown-item>
-                                <el-dropdown-item>
-                                    <div @click="logout">退出登录</div>
-                                </el-dropdown-item>
-                            </el-dropdown-menu>
-                        </template>
-                    </el-dropdown>
-                </el-menu>
+                        <div style="flex: 1; color: #4447ea; font-size: 30px;margin: 10px; margin-left: 25px;">
+                            <b>Bicycle-Management</b>
+                        </div>
 
+                        <div class="flex-grow" />
+                        <el-dropdown>
+                            <div class="el-dropdown-link" style="line-height: 60px">
+                                <span style="font-size: 14px; margin-left: 45px; color: #ffffff" >{{ currentUser.username }}</span>
+                                <el-icon class="el-icon&#45;&#45;right">
+                                    <arrow-down />
+                                </el-icon>
+                            </div>
+                            <template #dropdown>
+                                <el-dropdown-menu>
+                                    <el-dropdown-item>
+                                        <div>修改信息</div>
+                                    </el-dropdown-item>
+                                    <el-dropdown-item>
+                                        <div @click="logout">退出登录</div>
+                                    </el-dropdown-item>
+                                </el-dropdown-menu>
+                            </template>
+                        </el-dropdown>
+                    </el-menu>
+                </div>
             </el-header>
             <el-container>
                 <el-aside width="200px">
